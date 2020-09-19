@@ -59,7 +59,7 @@ function chk_table_color($num){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<?php include_once('tamplate/head.php');?>
+<?php include_once('../tamplate/head.php');?>
 </head>
 
 <body class="index-page sidebar-collapse">
