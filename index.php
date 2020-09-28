@@ -62,14 +62,15 @@
   }
 ?>
 
+
 <html lang="en" class="h-100">
   <head>
       <meta charset="utf-8">
       
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="">
-      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-      <meta name="generator" content="Jekyll v4.1.1">
+      <meta name="description" content="ราคาทองคำวันนี้">
+      <meta name="author" content="K@rnDIY | goldreport Thailand">
+      <meta name="generator" content="K@rnDIY">
       <title> ราคาทองคำวันนี้ </title></title>
 
       <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sticky-footer/"> -->
@@ -112,6 +113,11 @@
           max-width: 680px;
           padding: 0 15px;
           }
+          
+        .dark-mode {
+          background-color: #222;
+          color: white;
+        }
 
           .footer {
           background-color: #f5f5f5;
@@ -127,12 +133,16 @@
   <div class="container">
  
 
+   <div class="text-center">
+      <input onclick="myFunction()" type="checkbox"  data-toggle="toggle"> Dark mode
+      </label> 
+   </div>
 
     <div  class="card-body" id="report-gold2day">
           <h3 class="mt-5 text-center">ราคาทองตามประกาศของสมาคมค้าทองคำ </h3>
           <p class="lead text-center">ราคาทองคำ ประจำวันที่ : <?=$manage[1][0]['time'];?> : ครั้งที่ <?=$manage[1][0]['upd'];?> </p>
           <?php  if($data == 'true'){ ?>
-        <table class="table">
+        <table class="table table-warning">
           <thead>  
             <tbody>
               <thead>                            
@@ -165,53 +175,53 @@
                       ?>  
     </div>
     <div  class="card-body" id="report-Cal-gold">
-    <h3 class="mt-5 text-center">คำนวนราคาทองคำ </h3>
-         
-    <table class="table ">
-    <?php 
-                      function toNumber($val) {
-                        $val =   str_replace(',','',$val);
-                        if (is_numeric($val)) {
-                            $int = (int)$val;
-                            $float = (float)$val;
-                    
-                            $val = ($int == $float) ? $int : $float;
-                            return $val;
-                        } else {
-                            trigger_error("Cannot cast $val to a number", E_USER_WARNING);
-                            return null;
-                        }
-                    }
-                      $golds = toNumber($manage[1][0]['ombuy']);
+      <h3 class="mt-5 text-center">คำนวนราคาทองคำ </h3>
+          
+      <table class="table table-dark ">
+      <?php 
+                        function toNumber($val) {
+                          $val =   str_replace(',','',$val);
+                          if (is_numeric($val)) {
+                              $int = (int)$val;
+                              $float = (float)$val;
                       
-                      ?>
-                          <thead>
-                                <tr>                             
-                                    <th class="font-SZ"  >ทองคำรูปพรรณ</th>
-                                    <th class="text-center font-SZ">ราคา/บาท</th>                                                             
-                                </tr>
-                            </thead>
-                            <tbody>
-                             <tr>
-                                 <td class="font-SZ" >1 บาท</td>  
-                                 <td class="text-center font-SZ"><?=number_format($golds,2);?></td> 
-                             </tr>
-                             <tr>
-                                 <td class="font-SZ">2 สลึง</td>  
-                                 <td class="text-center font-SZ"><?=number_format(($golds/2),2);?></td> 
-                             </tr>
-                             <tr>
-                                 <td class="font-SZ">1 สลึง</td>  
-                                 <td class="text-center font-SZ"><?=number_format((($golds)/4),2);?></td> 
-                             </tr>
-                             <tr>
-                                 <td class="font-SZ">ครึ่งสลึง</td>  
-                                 <td class="text-center font-SZ"><?=number_format(((($golds/4))/2),2);?></td> 
-                             </tr>
-            </tbody>
-        </table>    
+                              $val = ($int == $float) ? $int : $float;
+                              return $val;
+                          } else {
+                              trigger_error("Cannot cast $val to a number", E_USER_WARNING);
+                              return null;
+                          }
+                      }
+                        $golds = toNumber($manage[1][0]['ombuy']);
+                        
+                        ?>
+                            <thead>
+                                  <tr>                             
+                                      <th class="font-SZ"  >ทองคำรูปพรรณ</th>
+                                      <th class="text-center font-SZ">ราคา/บาท</th>                                                             
+                                  </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                  <td class="font-SZ" >1 บาท</td>  
+                                  <td class="text-center font-SZ"><?=number_format($golds,2);?></td> 
+                              </tr>
+                              <tr>
+                                  <td class="font-SZ">2 สลึง</td>  
+                                  <td class="text-center font-SZ"><?=number_format(($golds/2),2);?></td> 
+                              </tr>
+                              <tr>
+                                  <td class="font-SZ">1 สลึง</td>  
+                                  <td class="text-center font-SZ"><?=number_format((($golds)/4),2);?></td> 
+                              </tr>
+                              <tr>
+                                  <td class="font-SZ">ครึ่งสลึง</td>  
+                                  <td class="text-center font-SZ"><?=number_format(((($golds/4))/2),2);?></td> 
+                              </tr>
+              </tbody>
+          </table>    
 
-       
+        
     </div>
 
 
@@ -226,5 +236,12 @@
   </div>
 </footer>
 
-
+<script>
+function myFunction() {
+   var element = document.body;
+   var etable = document.table;
+   element.classList.toggle("dark-mode");
+  <?php $_SESSION['darkmode'] = !$_SESSION['darkmode'];?>
+}
+</script>
 </body></html>
