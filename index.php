@@ -88,7 +88,7 @@
       <!-- <meta name="msapplication-config" content="https://getbootstrap.com/docs/4.5/assets/img/favicons/browserconfig.xml"> -->
         <meta name="theme-color" content="#563d7c">
 
-
+      <?php include_once('tamplate/head.php');?>
         <style>
           .bd-placeholder-img {
             font-size: 1.125rem;
