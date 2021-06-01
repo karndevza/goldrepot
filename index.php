@@ -139,6 +139,7 @@
    </div>
 
     <div  class="card-body" id="report-gold2day">
+      <?=$urls;?>
           <h3 class="mt-5 text-center">ราคาทองตามประกาศของสมาคมค้าทองคำ </h3>
           <p class="lead text-center">ราคาทองคำ ประจำวันที่ : <?=$manage[1][0]['time'];?> : ครั้งที่ <?=$manage[1][0]['upd'];?> </p>
           <?php  if($data == 'true'){ ?>
