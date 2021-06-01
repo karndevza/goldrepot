@@ -1,6 +1,6 @@
 <?php 
   $curl = "http://" . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
-  $urls = $curl.'/goldjs.php';
+  $urls = $curl.'goldjs.php';
  
 
   //$url = 'http://localhost/goldfire2/goldjs.php';
