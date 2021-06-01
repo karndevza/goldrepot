@@ -1,11 +1,11 @@
 <?php 
- // $curl = "http://" . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
- // $url = $curl.'/goldjs.php';
+  $curl = "http://" . $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+  $urls = $curl.'/goldjs.php';
  
 
   //$url = 'http://localhost/goldfire2/goldjs.php';
  // $urls = $curl.'/gold.json';
-  $urls = 'https://zpay2.000webhostapp.com/api/gold.json';
+  //$urls = 'https://zpay2.000webhostapp.com/api/gold.json';
   $url = 'https://zpay2.000webhostapp.com/api/goldupdate.php';
   $callapi = file_get_contents($url);  
   $homepage = file_get_contents($urls);    
