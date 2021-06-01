@@ -1,6 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
+header('Access-Control-Allow-Origin: *');
 date_default_timezone_set("Asia/Bangkok");
 require_once 'simple_html_dom.php';
 header("Content-Type: application/json; charset=UTF-8");
